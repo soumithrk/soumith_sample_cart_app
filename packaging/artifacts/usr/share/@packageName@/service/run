@@ -1,0 +1,9 @@
+#!/bin/sh -e
+
+# http://cr.yp.to/daemontools/faq/create.html
+# Redirect stderr to stdout for logging into the same file
+exec 2>&1
+exec \
+    envdir @userFilesBaseDir@/env \
+    setuidgid @userName@ \
+    java -Dspring.profiles.active=@deploymentEnv@ $JAVA_OPTS -jar @destinationJarPath@
