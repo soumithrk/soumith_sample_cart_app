@@ -63,4 +63,3 @@ integrationTest {
         events 'passed', 'skipped', 'failed'
     }
 }
-//Testing something
